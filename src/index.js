@@ -31,15 +31,14 @@ async function mostrarElementos() {
 }
 
 async function obtenerInfoJson() {
-  const respuesta = await fetch('http://localhost:5500/src/data/data.json');
+  const respuesta = await fetch('http://localhost:5000/elementos');
   const data = await respuesta.json();
-  return data.elementos;
+  return data;
 }
 
 function cambiarValor(e) {
   if (e.name == 'caloria') {
     textoCaloria.innerText = 0;
-
     textoCaloria.innerText =
       parseInt(e.value) == 0 || e.value == '' ? 0 : parseInt(e.value);
   } else {

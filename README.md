@@ -6,10 +6,10 @@
 npm install
 ```
 
-### una vez instalado los packages ejecutar el siguiente comando:
+### una vez instalado los packages ejecutar los siguientes comando:
 
 ```sh
-npm run tw:wacth or npm run tw:build
+(npm run tw:wacth or npm run tw:build) && npm run server
 ```
 
 ### por ultimo ejecute el index.html que se encuentra en el directorio, con alguna extension de su editor de preferencia o `live Server`
