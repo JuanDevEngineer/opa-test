@@ -6,12 +6,18 @@
 npm install
 ```
 
-### una vez instalado los packages ejecutar los siguientes comando:
+### Una vez instalado los packages, ejecute el comando para correr [tailwindcss]:
 
 ```sh
-(npm run tw:wacth or npm run tw:build) && npm run server
+npm run tw:wacth or npm run tw:build
 ```
 
-### por ultimo ejecute el index.html que se encuentra en el directorio, con alguna extension de su editor de preferencia o `live Server`
+### Para correr el servicio local de la data, ejecute el siguiente comando:
 
-> Note: en caso de que no le cargue la información visual, en la carpeta [src/index.js] en la funcion `obtenerInfoJson()` cambie la respectiva url.
+```sh
+npm run server
+```
+
+### Por ultimo ejecute el index.html que se encuentra en el directorio raiz, con alguna extension de su editor de preferencia o `live Server` o simplemente abriendolo en el navegador de preferencia
+
+> Note: en caso de que no le cargue la información de la data, en la carpeta [src/index.js] en la funcion `obtenerInfoJson()` cambie la respectiva url.

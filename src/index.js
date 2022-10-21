@@ -2,9 +2,11 @@ let inputCaloria = document.getElementById('caloria');
 let inputPeso = document.getElementById('peso');
 let textoCaloria = document.getElementById('texto-caloria');
 let textoPeso = document.getElementById('texto-peso');
+let noInformacionResult = document.getElementById('no-informacion');
 
 window.document.addEventListener('DOMContentLoaded', function () {
   mostrarElementos();
+  noInformacionResult.style.display = 'block';
 });
 
 document
@@ -17,17 +19,45 @@ document
     );
   });
 
-async function determinarElementosViables(caloriaMinima = 0, pesoMaximo = 0) {
+async function determinarElementosViables(caloriaMinima, pesoMaximo) {
+  if (
+    caloriaMinima == 0 ||
+    isNaN(caloriaMinima) ||
+    pesoMaximo == 0 ||
+    isNaN(pesoMaximo)
+  ) {
+    alert('Los campos son obligatorios');
+    return;
+  }
   let elementosViables = [];
   let sumaCaloria = 0,
     sumaPeso = 0;
-  let elementos = await obtenerInfoJson();
+  const elementos = await obtenerInfoJson();
+
+  for (let i = 0; i < elementos.length; i++) {
+    let auxPeso = sumaPeso;
+    let auxCaloria = sumaCaloria;
+
+    sumaPeso += elementos[i].peso;
+
+    if (sumaPeso <= pesoMaximo || sumaCaloria >= caloriaMinima) {
+      elementosViables.push(elementos[i]);
+      continue;
+    } else {
+      sumaPeso = auxPeso;
+      sumaCaloria = auxCaloria;
+    }
+
+    sumaCaloria += elementos[i].calorias;
+  }
+
+  noInformacionResult.style.display = 'none';
+  cargarInformacion(elementosViables, 'lista-elementos-viables');
 }
 
 async function mostrarElementos() {
   const elementos = await obtenerInfoJson();
-  console.log(elementos);
-  cargarInformacion(elementos);
+  cargarInformacion(elementos, 'lista-elementos');
 }
 
 async function obtenerInfoJson() {
@@ -48,13 +78,19 @@ function cambiarValor(e) {
   }
 }
 
-function cargarInformacion(array = []) {
-  let lista = document.getElementById('lista-elementos');
-  for (const key in array) {
-    lista.innerHTML += `<li>
-      ${array[key].elemento}
-      <span>caloria: ${array[key].calorias}</span>
-      <span>peso: ${array[key].peso}</span>
-    </li>`;
+function cargarInformacion(array = [], input) {
+  let lista = document.getElementById(input);
+  if (array.length == 0) {
+    noInformacionResult.style.display = 'block';
+    lista.innerHTML = `<li>No hay información</li>`;
+    return;
+  } else {
+    for (const key in array) {
+      lista.innerHTML += `<li>
+        ${array[key].elemento}
+        <span>caloria: ${array[key].calorias}</span>
+        <span>peso: ${array[key].peso}</span>
+      </li>`;
+    }
   }
 }
