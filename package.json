@@ -2,7 +2,7 @@
   "name": "opa-reto",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "tw:watch": "npx tailwindcss -i ./src/assets/css/input.css -o ./build/assets/css/tailwind.css --watch",
     "tw:build": "npx tailwindcss -i ./src/assets/css/input.css -o ./build/assets/css/tailwind.css --minify"
