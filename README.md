@@ -1,6 +1,6 @@
 # opa-test
 
-### al clonar el proyecto ejecutar:
+### Al clonar el proyecto ejecutar:
 
 ```sh
 npm install
