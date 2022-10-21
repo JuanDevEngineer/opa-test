@@ -1,0 +1,34 @@
+{
+  "elementos": [
+    {
+      "id": 1,
+      "elemento": "Elemento 1",
+      "peso": 5,
+      "calorias": 3
+    },
+    {
+      "id": 2,
+      "elemento": "Elemento 2",
+      "peso": 3,
+      "calorias": 5
+    },
+    {
+      "id": 3,
+      "elemento": "Elemento 3",
+      "peso": 5,
+      "calorias": 2
+    },
+    {
+      "id": 4,
+      "elemento": "Elemento 4",
+      "peso": 1,
+      "calorias": 8
+    },
+    {
+      "id": 5,
+      "elemento": "Elemento 5",
+      "peso": 2,
+      "calorias": 3
+    }
+  ]
+}

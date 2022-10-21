@@ -1,0 +1,18 @@
+Requisito:
+
+Una serie de excursionistas desea crear un software que permita determinar los (elementos) que puedan usarse para escalar un risco basado en las (propiedades calóricas) y peso de cada (elemento), para escalar el risco se especificara la (cantidad mínima de calorías) además del (peso máximo) que se puede llevar. El software deberá de indicar al usuario el (conjunto de elementos) óptimos basado en que cumplan el mínimo de calorías requeridas y el llevar el menor peso posible.
+
+Un ejemplo:
+* mínimo de calorías: 15
+* peso máximo: 10
+
+Elementos:
+
+E1 peso 5 calorías: 3
+E1 peso 3 calorías: 5
+E1 peso 5 calorías: 2
+E1 peso 1 calorías: 8
+E1 peso 2 calorías: 3
+
+NOTA: en este caso los elementos viables son: E1, E2, E4, ya que su peso total seria 9
+y brindan 16(calorías)

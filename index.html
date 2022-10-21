@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/assets/css/tailwind.css" />
+    <title>Software de elementos</title>
+  </head>
+  <body>
+    <h1 class="text-4xl text-center font-bold">Generador de medida de peso</h1>
+
+    <div class="flex justify-center items-center mt-5 flex-col">
+      <p class="text-2xl text-violet-800" >Minimo de calorías: <span id="texto-caloria">0</span></p>
+      <p class="text-2xl text-violet-800" >Peso máximo: <span id="texto-peso">0</span></p>
+    </div>
+    <div class="w-full h-full max-w-xs m-auto pt-10">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="formulario">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="caloria"
+          >
+            Minino de caloría
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="caloria"
+            name="caloria"
+            type="text"
+            onkeyup="cambiarValor(this)"
+            placeholder="caloria"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="peso"
+          >
+          Peso máximo
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="peso"
+            id="peso"
+            type="text"
+            onkeyup="cambiarValor(this)"
+            placeholder="peso" />
+          </select>
+        </div>
+        <div>
+          <label class="block text-gray-700 text-sm font-bold mb-2">Elementos viables</label>
+          <ul id="lista-elementos" class="flex flex-1 flex-col my-2"></ul>
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Elementos viables
+          </button>
+        </div>
+
+      </form>
+      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <p>result</p>
+      </div>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>

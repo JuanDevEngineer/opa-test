@@ -1,0 +1,19 @@
+{
+  "name": "opa-reto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw:watch": "npx tailwindcss -i ./src/assets/css/input.css -o ./build/assets/css/tailwind.css --watch",
+    "tw:build": "npx tailwindcss -i ./src/assets/css/input.css -o ./build/assets/css/tailwind.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.0"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3"
+  }
+}
