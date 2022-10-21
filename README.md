@@ -12,7 +12,7 @@ npm install
 npm run tw:wacth or npm run tw:build
 ```
 
-### Para correr el servicio local de la data, ejecute el siguiente comando:
+### Para correr el servicio local de la data [src/data/data.json], ejecute el siguiente comando:
 
 ```sh
 npm run server
